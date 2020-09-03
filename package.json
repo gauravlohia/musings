@@ -1,0 +1,15 @@
+{
+  "name": "musings",
+  "version": "1.0.0",
+  "description": "A place to create a personal blog",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gaurav Lohia",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1"
+  }
+}
