@@ -1,7 +1,7 @@
 <%- include("../partials/header")%>
     
 <div class="container">
-    <form>
+    <form action="/blogs/<%= blog._id %>?_method=PUT" method="POST">
         <div class="form-group">
             <label for="blogTitle">Blog Title</label>
             <input type="text" class="form-control" id="blogTitle" name="blog[title]" value="<%= blog.title %>">

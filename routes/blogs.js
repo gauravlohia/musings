@@ -9,7 +9,6 @@ router.get("/blogs", (req, res) => {
         if (err) {
             console.log(err);
         } else {
-            // console.log(foundBlogs);
             res.render("blogs/index", {blogs: foundBlogs});
         }
     });
@@ -28,8 +27,7 @@ router.post("/blogs", (req, res) => {
         if(err) {
             console.log(err);
         } else {
-            console.log(blog);
-            res.redirect("/");
+            res.redirect("/blogs");
         }
     });
 });
@@ -52,6 +50,19 @@ router.get("/blogs/:id/edit", (req, res) => {
             console.log(err);
         } else {
             res.render("blogs/edit", {blog: foundBlog});
+        }
+    });
+});
+
+// UPDATE ROUTE - make changes to a particular blog and redirect somewhere
+router.put("/blogs/:id", (req, res) => {
+    var updatedBlog = req.body.blog;
+    updatedBlog.date = new Date();
+    Blog.findByIdAndUpdate(req.params.id, updatedBlog, (err, blog) => {
+        if (err) {
+            console.log(err);
+        } else {
+            res.redirect(`/blogs/${req.params.id}`);
         }
     });
 });
