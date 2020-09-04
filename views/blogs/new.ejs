@@ -1,0 +1,21 @@
+<%- include("../partials/header")%>
+    
+<div class="container">
+    <form action="/blogs" method="post">
+        <div class="form-group">
+            <label for="blogTitle">Blog Title</label>
+            <input type="text" class="form-control" id="blogTitle" name="blog[title]" placeholder="Title">
+        </div>
+        <div class="form-group">
+            <label for="blogImage">Image URL</label>
+            <input type="url" class="form-control" id="blogImage" name="blog[image]" placeholder="Image URL">
+        </div>
+        <div class="form-group">
+            <label for="blogText">Content</label>
+            <textarea class="form-control" name="blog[content]" id="blogText" placeholder="Blog Content" rows="10" required></textarea>
+        </div>
+        <button class="btn btn-primary">Create Blog</button>
+    </form>
+</div>
+
+<%- include("../partials/footer")%>
