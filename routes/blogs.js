@@ -67,4 +67,15 @@ router.put("/blogs/:id", (req, res) => {
     });
 });
 
+// DESTROY ROUTE - delete a particular blog
+router.delete("/blogs/:id", (req, res) => {
+    Blog.findByIdAndDelete(req.params.id, (err, blog) => {
+        if(err) {
+            console.log(err);
+        } else {
+            res.redirect("/blogs");
+        }
+    });
+});
+
 module.exports = router;
