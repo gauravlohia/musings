@@ -18,7 +18,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(methodOverride('_method'));
 
-// App Routes
+// APP ROUTES
 app.get("/", (req, res) => {
     res.render("index");
 });
