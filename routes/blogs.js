@@ -34,4 +34,15 @@ router.post("/blogs", (req, res) => {
     });
 });
 
+// SHOW ROUTE - show the selected blog
+router.get("/blogs/:id", (req, res) => {
+    Blog.findById(req.params.id, (err, foundBlog) => {
+        if (err) {
+            console.log(err);
+        } else {
+            res.render("blogs/show", {blog: foundBlog});
+        }
+    });
+});
+
 module.exports = router;

@@ -1,18 +1,17 @@
-<%- include('../partials/header') %> 
+<%- include('../partials/header') %>
 
 <div class="container">
     <% blogs.forEach((blog) => { %>
-        <div id="blogsContainer">
-            <div class="row align-items-center" >
-                <div class="col-md-10">
-                    <h2><%= blog.title %></h2>
-                </div>
-                <div class="col-md-2">
-                    <p><%= blog.date.toLocaleDateString() %> </p>
-                </div>
+        <div class="row align-items-center blog-container">
+            <div class="col-md-10">
+                <h2><%= blog.title %></h2>
+                <p><%= blog.date.toLocaleDateString() %> </p>
+            </div>
+            <div class="col-md-2">
+                <a href="/blogs/<%= blog._id %>" class="btn btn-primary">Read</a>
             </div>
         </div>
     <% }) %>
 </div>
 
-<%- include('../partials/footer') %> 
+<%- include('../partials/footer') %>

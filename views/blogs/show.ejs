@@ -1,0 +1,18 @@
+<%- include('../partials/header') %> 
+
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-4"><%= blog.title %> </h1>
+        <p class="lead"><%= blog.date.toLocaleDateString() %></p>
+    </div>
+    
+    <div class="card">
+        <img src="<%= blog.image %>" class="card-img-top">
+        <div class="card-body">
+          <p class="card-text"><%= blog.content %></p>
+          <a href="#" class="btn btn-primary">Edit</a>
+        </div>
+      </div>
+</div>
+
+<%- include('../partials/footer') %> 

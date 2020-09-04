@@ -1,15 +1,10 @@
-#blogsContainer .row {
+.blog-container {
     border: 2px solid steelblue;
-    border-radius: 25px;
+    border-radius: 10px;
     margin-top: 2em;
 }
 
-#blogsContainer .row .col-md-2 p, #blogsContainer .row .col-md-10 h2{
+.blog-container .col-md-2 p, .blog-container .col-md-10 h2{
     margin-top: 0;
     margin-bottom: 0;
-}
-
-
-#blogsContainer .row :hover {
-    cursor: pointer;
 }
