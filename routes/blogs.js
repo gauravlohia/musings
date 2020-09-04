@@ -45,4 +45,15 @@ router.get("/blogs/:id", (req, res) => {
     });
 });
 
+// EDIT ROUTE - show the edit page for a particular blog
+router.get("/blogs/:id/edit", (req, res) => {
+    Blog.findById(req.params.id, (err, foundBlog) => {
+        if(err) {
+            console.log(err);
+        } else {
+            res.render("blogs/edit", {blog: foundBlog});
+        }
+    });
+});
+
 module.exports = router;
