@@ -1,3 +1,5 @@
+const { isLoggedIn } = require('../middlewares/middlewares');
+
 var express = require('express'),
     Blog = require('../models/Blogs'),
     router = express.Router();
@@ -15,12 +17,12 @@ router.get("/blogs", (req, res) => {
 });
 
 // NEW ROUTE - show the form to create a new blog
-router.get("/blogs/new", (req, res) => {
+router.get("/blogs/new", isLoggedIn, (req, res) => {
     res.render("blogs/new");
 });
 
 // CREATE route - create a new blog
-router.post("/blogs", (req, res) => {
+router.post("/blogs", isLoggedIn, (req, res) => {
     var newBlog = req.body.blog;
     newBlog.date = new Date();
     Blog.create(req.body.blog, (err, blog) => {

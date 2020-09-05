@@ -9,6 +9,7 @@ var LocalStrategy = require('passport-local').Strategy;
 var flash = require('connect-flash');
 var session = require('express-session');
 var User = require('./models/User');
+var middlewares = require('./middlewares/middlewares');
 
 
 // MONGOOSE SETUP
